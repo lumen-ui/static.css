@@ -1,0 +1,26 @@
+{
+  "name": "static.css",
+  "version": "0.1.0",
+  "description": "A drop-in collection of CSS styles to establish common stylings.",
+  "author": "EQ Works",
+  "private": false,
+  "license": "MIT",
+  "repository": "git@github.com:lumen-ui/static.css.git",
+  "main": "dist/static.css",
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not IE_Mob 11",
+    "maintained node versions"
+  ],
+  "scripts": {
+    "build": "./node_modules/.bin/postcss -u autoprefixer -o dist/static.css dist/static.css",
+    "sass": "node-sass --include-path='./node_modules' --output-style compressed -o dist src/static.scss",
+    "sass-watch": "yarn sass && node-sass --include-path='./node_modules' --output-style compressed -o dist src/static.scss -w"
+  },
+  "devDependencies": {
+    "autoprefixer": "9.8.6",
+    "node-sass": "^4.14.1",
+    "postcss-cli-simple": "^3.1.0"
+  }
+}
